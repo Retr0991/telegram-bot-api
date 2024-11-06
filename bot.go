@@ -96,7 +96,7 @@ func (bot *BotAPI) MakeRequest(endpoint string, params Params) (*APIResponse, er
 		log.Printf("Endpoint: %s, params: %v\n", endpoint, params)
 	}
 
-	method := fmt.Sprintf(bot.apiEndpoint, bot.Token, endpoint)
+	method := fmt.Sprintf("%s/bot%s/%s", bot.apiEndpoint, bot.Token, endpoint)
 
 	values := buildParams(params)
 
